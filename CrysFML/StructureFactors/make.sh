@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # Program
-PROGRAM_SOURCE="Calc_Sfac.f90"
-PROGRAM_EXE="calc_sfac"
+PROGRAM_SOURCE="source/Calc_Sfac.f90"
+PROGRAM_EXE="build/calc_sfac"
 
 # Compiler Name
 COMP="gfortran"
@@ -25,8 +25,12 @@ LIBSTATIC="-lcrysfml"
 LIBDYNAMIC="-lcrysfml"
 
 # Compilation Process
+cd "${0%/*}"
 $COMP $OPT $PROGRAM_SOURCE $INC
 $COMP *.o  -o $PROGRAM_EXE $LIB $LIBSTATIC
 
 # Clean
 rm -rf *.o *.mod
+
+read -p "Press any key to exit..."
+exit 0
