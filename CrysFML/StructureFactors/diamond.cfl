@@ -1,0 +1,7 @@
+Title  Test
+!        a        b        c     alpha    beta   gamma
+Cell   3.5740   3.5740   3.5740  90.000  90.000  90.000
+!     Space Group
+Spgr  F d -3 m
+!                 x        y       z    B         occ  Spin Charge
+Atom  C1  C  0.0000   0.0000  0.0000  0.0    0.069444   0.0    0.0
