@@ -31,8 +31,11 @@
 *.out
 *.app
 
+# Dirs
+build
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
 # macOS
 .DS_Store
-
-# Executables
-build
