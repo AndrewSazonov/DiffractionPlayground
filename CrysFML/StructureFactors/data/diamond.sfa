@@ -30,7 +30,7 @@
       0.0000     12.7735      0.0000          0.000000    0.078287    0.000000
       0.0000      0.0000     12.7735          0.000000    0.000000    0.078287
 
- =>  Cartesian frame: x // a; y is in the ab-plane; z is x ^ y   
+ =>  Cartesian frame: z // c; y is in the bc-plane; x is y ^ z = a*  
 
      Crystal_to_Orthonormal_Matrix              Orthonormal_to_Crystal Matrix
               Cr_Orth_cel                               Orth_Cr_cel  
