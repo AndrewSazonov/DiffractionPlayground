@@ -1,0 +1,50 @@
+Instrumental resolution function for POLARIS/ISIS L Chapon 10/2003  ireso: 5
+! To be used with function NPROF=9 in FullProf  (Res=5)
+! ----------------------------------------------------  Bank 1
+!  Type of profile function: back-to-back expon * pseudo-Voigt
+NPROF   9
+!       Tof-min(us)    step      Tof-max(us)
+TOFRG   1000.0000      1.0000   9991.6250
+!        Dtt1           Dtt2       Zero
+D2TOF  2147.51660     1.14443    5.577
+!     TOF-TWOTH of the bank
+TWOTH    35.0
+!       Sig-2     Sig-1     Sig-0
+SIGMA    0.000  120.883     0.000
+!       Gam-2     Gam-1     Gam-0
+GAMMA   0.000     1.645     0.000
+!          alph0       beta0       alph1       beta1
+ALFBE      0.000000    0.063700    0.615586    0.202002
+END
+! ----------------------------------------------------- Bank 2
+!  Type of profile function: back-to-back expon * pseudo-Voigt
+NPROF   9
+!       Tof-min(us)    step      Tof-max(us)
+TOFRG   1200.0000      1.0000  20000.6563
+!        Dtt1          Dtt2         Zero
+D2TOF  4568.74463    -0.71899     -1.538
+!     TOF-TWOTH of the bank
+TWOTH    90.0
+!       Sig-2     Sig-1     Sig-0
+SIGMA    0.000  60.743      0.000
+!       Gam-2     Gam-1     Gam-0
+GAMMA   0.000     5.464     0.000
+!          alph0       beta0       alph1       beta1
+ALFBE      0.000000    0.057474    0.615586    0.004958
+END
+! ----------------------------------------------------- Bank 3
+!  Type of profile function: back-to-back expon * pseudo-Voigt
+NPROF   9
+!       Tof-min(us)    step      Tof-max(us)
+TOFRG   1500.0000      1.0000  19581.3438
+!        Dtt1          Dtt2         Zero
+D2TOF  6168.58008    -2.22570      2.451
+!     TOF-TWOTH of the bank
+TWOTH    145.0
+!       Sig-2     Sig-1     Sig-0
+SIGMA    0.000   49.911      0.000
+!       Gam-2     Gam-1     Gam-0
+GAMMA   0.000     2.833     0.000
+!          alph0       beta0       alph1       beta1
+ALFBE      0.000000    0.072395    0.615586    0.001819
+END
