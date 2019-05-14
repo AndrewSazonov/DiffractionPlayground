@@ -4,6 +4,9 @@
 PROGRAM_SOURCE="source/Calc_Sfac.f90"
 PROGRAM_EXE="build/calc_sfac"
 
+# Crysfml lib
+CRYSFML_LIB="$CRYSFML/GFortran/LibC"
+
 # Compiler Name
 COMP="gfortran"
 
@@ -19,8 +22,8 @@ else
 fi
 
 # External Libraries Options
-INC="-I$CRYSFML"
-LIB="-L$CRYSFML"
+INC="-I$CRYSFML_LIB"
+LIB="-L$CRYSFML_LIB"
 LIBSTATIC="-lcrysfml"
 LIBDYNAMIC="-lcrysfml"
 
