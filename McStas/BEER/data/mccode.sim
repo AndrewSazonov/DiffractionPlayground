@@ -1,0 +1,272 @@
+McStas simulation description file for ESS_BEER_MCPL.
+Date:    Wed May 15 12:09:41 2019
+Program: McStas 2.5 - Dec. 12, 2018
+
+begin instrument: ESS_BEER_MCPL
+  File: /Users/andrewsazonov/Desktop/MacStas/BEER/ESS_BEER_MCPL_20190515_120940/mccode
+  Source: ESS_BEER_MCPL.instr
+  Parameters:  input(string) repetition(int) pwdfile(string) lc(double) lam0(double) dlam(double) omega(double) chi(double) colw(double) modul(double) mod_frq(double) mod_twidth(double) mod_shift(double) only_event(double) pinc(double) ptra(double) strain(double) ustrain(double)
+  Trace_enabled: yes
+  Default_main: yes
+  Embedded_runtime: yes
+end instrument
+
+begin simulation: /Users/andrewsazonov/Desktop/MacStas/BEER/ESS_BEER_MCPL_20190515_120940
+  Format: McCode with text headers
+  URL: http://www.mccode.org
+  Creator: McStas 2.5 - Dec. 12, 2018
+  Instrument: ESS_BEER_MCPL.instr
+  Ncount: 100000000
+  Trace: no
+  Gravitation: no
+  Seed: 1557956646
+  Directory: /Users/andrewsazonov/Desktop/MacStas/BEER/ESS_BEER_MCPL_20190515_120940
+  Param: input=BEER_MR.mcpl
+  Param: repetition=50
+  Param: pwdfile=duplex.laz
+  Param: lc=6.65
+  Param: lam0=2
+  Param: dlam=1.8
+  Param: omega=45
+  Param: chi=90
+  Param: colw=1
+  Param: modul=0
+  Param: mod_frq=2240
+  Param: mod_twidth=0.0029
+  Param: mod_shift=0
+  Param: only_event=-1
+  Param: pinc=0.1
+  Param: ptra=0
+  Param: strain=0
+  Param: ustrain=0
+end simulation
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_2d(100, 100)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: xymon
+  position: 0 0 0.001
+  title: PSD monitor
+  Ncount: 500000
+  filename: xymon.dat
+  statistics: X0=-0.000308211; dX=0.0291771; Y0=-0.00135666; dY=0.0877436;
+  signal: Min=0; Max=1450.89; Mean=30.5244;
+  values: 305244 552.743 477850
+  xvar: X 
+  yvar: Y 
+  xlabel: X position [cm]
+  ylabel: Y position [cm]
+  zvar: I
+  zlabel: Signal per bin
+  xylimits: -0.5 0.5 -0.5 0.5
+  variables: I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_1d(60)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: lmon
+  position: 0 0 0.002
+  title: Wavelength monitor
+  Ncount: 500000
+  filename: lmon.dat
+  statistics: X0=2.16838; dX=0.499329;
+  signal: Min=1527.68; Max=10128.3; Mean=5087.4;
+  values: 305244 552.743 477850
+  xvar: L
+  yvar: (I,I_err)
+  xlabel: Wavelength [AA]
+  ylabel: Intensity
+  xlimits: 1.1 2.9
+  variables: L I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_1d(100)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: hdiv_mon
+  position: 0 0 0.003
+  title: horizontal divergence monitor
+  Ncount: 500000
+  filename: hdiv.dat
+  statistics: X0=0.00399526; dX=0.0896019;
+  signal: Min=0; Max=12239.7; Mean=3052.44;
+  values: 305244 552.743 477850
+  xvar: divergence
+  yvar: (I,I_err)
+  xlabel: horizontal divergence [deg]
+  ylabel: Intensity
+  xlimits: -0.5 0.5
+  variables: divergence I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_2d(400, 400)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: toflam
+  position: 0 0 0.003
+  title: TOF-wavelength monitor
+  Ncount: 500000
+  filename: toflam.dat
+  statistics: X0=79808.8; dX=2225.29; Y0=1.99862; dY=0.058068;
+  signal: Min=0; Max=161.059; Mean=0.148708;
+  values: 23793.3 120.629 48950
+  xvar: Ti
+  yvar: Wa
+  xlabel: Time-of-flight [\gms]
+  ylabel: Wavelength [AA]
+  zvar: I
+  zlabel: Signal per bin
+  xylimits: 70000 90000 1.9 2.1
+  variables: I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_2d(201, 201)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: MonNDXZ
+  position: 0.52 0 0.04
+  title:  Intensity X, mm Z, mm Monitor (Square) per bin
+  Ncount: 500000
+  filename: SGV_xz.dat
+  statistics: X0=0.00665309; dX=0.302131; Y0=-0.00756546; dY=0.281323;
+  signal: Min=0; Max=1.68382; Mean=0.00783196;
+  values: 316.419 4.295 13486
+  xvar: X,
+  yvar: Z,
+  xlabel: X, mm
+  ylabel: Z, mm
+  zvar: I
+  zlabel: Signal per bin
+  xylimits: -5 5 -5 5
+  variables: I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_1d(201)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: MonNDX
+  position: 0.52 0 0.04
+  title: X, mm monitor
+  Ncount: 500000
+  filename: SGV_x.dat
+  statistics: X0=0.00665309; dX=0.302131;
+  signal: Min=0; Max=17.0138; Mean=1.57422;
+  values: 316.419 4.295 13486
+  xvar: U1
+  yvar: (I,I_err)
+  xlabel: X, mm
+  ylabel: Intensity [n/s/bin]
+  xlimits: -5 5
+  variables: U1 I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_1d(201)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: MonNDY
+  position: 0.52 0 0.04
+  title: Y, mm monitor
+  Ncount: 500000
+  filename: SGV_y.dat
+  statistics: X0=-0.0382627; dX=1.02058;
+  signal: Min=0; Max=6.46136; Mean=1.57422;
+  values: 316.419 4.295 13486
+  xvar: U1
+  yvar: (I,I_err)
+  xlabel: Y, mm
+  ylabel: Intensity [n/s/bin]
+  xlimits: -5 5
+  variables: U1 I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_1d(201)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: MonNDZ
+  position: 0.52 0 0.04
+  title: Z, mm monitor
+  Ncount: 500000
+  filename: SGV_z.dat
+  statistics: X0=-0.00756546; dX=0.281323;
+  signal: Min=0; Max=21.8897; Mean=1.57422;
+  values: 316.419 4.295 13486
+  xvar: U1
+  yvar: (I,I_err)
+  xlabel: Z, mm
+  ylabel: Intensity [n/s/bin]
+  xlimits: -5 5
+  variables: U1 I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_1d(3000)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: dhklmon
+  position: 0 0 0.04
+  title: ToF to dhkl detector
+  Ncount: 500000
+  filename: dhkl.dat
+  statistics: X0=1.79545; dX=0.377449;
+  signal: Min=0; Max=6.7819; Mean=0.087052;
+  values: 261.156 3.6946 12510
+  xvar: d
+  yvar: (I,I_err)
+  xlabel: dhkl [AA]
+  ylabel: Intensity
+  xlimits: 0.8 2.4
+  variables: d I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_2d(600, 800)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: psdtof
+  position: 0 0 0.04
+  title: Cylindrical monitor ToF x 2theta
+  Ncount: 500000
+  filename: tof_theta.dat
+  statistics: X0=85.7958; dX=7.88526; Y0=95181; dY=19339.9;
+  signal: Min=0; Max=0.624477; Mean=0.000615253;
+  values: 295.321 4.15649 12591
+  xvar: Sc
+  yvar: Ti
+  xlabel: Scattering angle [deg]
+  ylabel: Time-of-flight [\gms]
+  zvar: I
+  zlabel: Signal per bin
+  xylimits: 75 105 40889.1 120889
+  variables: I I_err N
+end data
+
+begin data
+  Date: Wed May 15 12:09:41 2019 (1557914981)
+  type: array_2d(400, 400)
+  Source: ESS_BEER_MCPL (ESS_BEER_MCPL.instr)
+  component: psdtofDetail
+  position: 0 0 0.04
+  title: Cylindrical monitor ToF x 2theta
+  Ncount: 500000
+  filename: tof_theta_detail.dat
+  statistics: X0=77.551; dX=1.39732; Y0=103917; dY=2080.63;
+  signal: Min=0; Max=0.308349; Mean=0.000389266;
+  values: 62.2826 2.32754 1327
+  xvar: Sc
+  yvar: Ti
+  xlabel: Scattering angle [deg]
+  ylabel: Time-of-flight [\gms]
+  zvar: I
+  zlabel: Signal per bin
+  xylimits: 75 80 100000 110000
+  variables: I I_err N
+end data
